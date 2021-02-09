@@ -201,7 +201,7 @@ the application used to render the selector is the `DamWidenPickerCmp` component
 This component is the main entry of our Widen picker React application.
 
 ### Widen picker React application
-The core of the Widen Picker is a Readt application used like a front end of the Widen API.
+The core of the Widen Picker is a React application used like a frontend of the Widen API.
 The application directly requests the Widen API and uses its search capabilities so the
 assets returned are always synchronized with the Widen catalog.
 
@@ -212,7 +212,7 @@ assets returned are always synchronized with the Widen catalog.
 
 <img src="../images/reactAppArch.png" width="850px"/>
 
-The registration process enable the application which starts in the
+The registration process enables the application, which starts in the
 [DamWidenPickerCmp][react:DamWidenPickerCmp] (1) file where the context parameters
 are checked based on the [douane's schema][react:douaneSchemaIndex.js] (2).
 If a required parameter is missing, an error is returned.
@@ -221,7 +221,7 @@ Then, the cleaned context is send to the [store][react:store.jsx] (3). The `stor
 a key part of the application. The `store` is the place where:
 * all the actions are defined
 * all the updates are made
-* the `onChange` function (provided by *Content Editor*) is called with the selected value:
+* the `onChange` function (provided by Content Editor) is called with the selected value:
 
     ```js
     case 'UPDATE_SELECTED_ITEM_UUID': {
@@ -233,8 +233,8 @@ a key part of the application. The `store` is the place where:
     }
     ```
 
-The `store` is used by all the application components (4). These components are in charge of the UI rendering.
-In Jahia v8, a selector has to use a component to render the selected content (aka viewer) and 
+The `store` is used by all application components (4). These components are in charge of the UI rendering.
+In Jahia V8, a selector uses a component to render the selected content (aka viewer) and 
 a component to render a picker (aka picker)
 as illustrated in the images below.
 
@@ -246,10 +246,10 @@ Picker
 
 
 #### Configuration
-As written before, the application directly requests the Widen API.
-To execute a request, the application needs connexion parameters to join the Widen API endpoint.
+As mentioned before, the application directly requests the Widen API.
+To execute a request, the application needs connection parameters to join the Widen API endpoint.
 
-These parameters are provided to the application via the [WidenPicker.jsp] configuration file.
+These parameters are provided to the application through the [WidenPicker.jsp] configuration file.
 
 First, we search for the mount point created by the module. The properties of the mount point are
 a subset of the variables written in the file [mount-widen.cfg][mount.cfg] 
@@ -274,11 +274,11 @@ contextJsParameters.config.widen={
 }
 ```
 > This widen object is checked
-  by the douane component of the application (cf. step 2 of the [architecture](#architecture-1)).
+  by the douane component of the application (see step 2 of the [architecture](#architecture-1)).
 
 > You can add more properties in the context if you want to create new features or enhance current features
 in the React application. For example, you could expose the timeout variable of the Widen API call or
-the timout of the cache.
+the timeout of the cache.
 
 
 To add more properties in the widen object:
